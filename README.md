@@ -13,8 +13,6 @@ A Hardware and Software SPI version of the LiquidCrystal library for the Spark C
 // Just make sure you don't redefine this pin as some other peripheral later in your code.
 LiquidCrystal lcd(A2);
 
-bool s = false;
-
 void setup() {
   // initialize the SPI ( Must call this before begin()! )
   lcd.initSPI();
@@ -44,8 +42,6 @@ void loop() {
 // These can be ANY of the A0 - A7 or D0 - D7 pins. 
 // Just make sure you don't redefine them as some other peripheral later in your code.
 LiquidCrystal lcd(D2, D3, D4);
-
-bool s = false;
 
 void setup() {
   // initialize the SPI ( Must call this before begin()! )
