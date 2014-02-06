@@ -61,3 +61,40 @@ void loop() {
   delay(100);
 }
 ```
+<hr>
+
+![wiring](http://i.imgur.com/Y3J6199.jpg)
+
+Software SPI is just as fast as 9MHz Hardware SPI so don't be afraid to use it!
+
+Control the backlight via SPI if you have an Adafruit I2C/SPI LCD Backpack
+
+```cpp
+// Create an instance of the library for SOFTWARE SPI mode (define SS "latch" pin, SCLK pin, SDAT pin)
+// These can be ANY of the A0 - A7 or D0 - D7 pins. 
+// Just make sure you don't redefine them as some other peripheral later in your code.
+LiquidCrystal lcd(D2, D3, D4);
+
+bool s = false;
+
+void setup() {
+  // initialize the SPI ( Must call this before begin()! )
+  lcd.initSPI();
+  // set up the LCD's number of columns and rows: 
+  lcd.begin(16, 2);
+  // turn on the backlight ( Requires initSPI() to be called first )
+  lcd.backlight();
+  // Print a message to the LCD.
+  lcd.print("Backlight Rave!");
+}
+
+void loop() {
+  // Toggle the Backlight on and off, Backlight RAVE!
+  if(s)
+    lcd.backlight();
+  else
+    lcd.noBacklight();
+  s = !s;
+  delay(100);
+}
+```
