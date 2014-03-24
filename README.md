@@ -1,7 +1,25 @@
-LiquidCrystal SPI for Spark Core
-================================
+SparkCore-LiquidCrystalSPI
+==========================
 
 A Hardware and Software SPI version of the LiquidCrystal library for the Spark Core.
+
+Universally Supports:
+* Standard Hitachi HD44780 based LCDs in 4-bit mode
+* Adafruit's 16x2 OLED Display (Winstar)
+* Sparkfun's 16x2 OLED Display (ADH Technology Co. Ltd.)
+
+Grab the RAW version of each file and place into your web IDE as follows:
+
+![image](http://i.imgur.com/2Zm5fmG.png)
+
+If you are building locally, place the files here:
+
+```
+..\core-firmware\inc\LiquidCrystalSPI.h
+..\core-firmware\src\application.cpp (renamed from Spark-LCDSoftSPI.cpp)
+..\core-firmware\src\LiquidCrystalSPI.cpp
+..\core-firmware\src\build.mk (optional, if you have your own make file going, just add the LiquidCrystalSPI.cpp to it)
+```
 
 ###Hardware SPI Wiring (default)###
 ![wiring](http://i.imgur.com/pFFWmv9.png)
