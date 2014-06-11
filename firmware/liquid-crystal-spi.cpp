@@ -30,7 +30,7 @@
 
 /* ========= INCLUDES ==================== */
 
-#include "LiquidCrystalSPI.h"
+#include "liquid-crystal-spi.h"
 
 /* ========= LiquidCrystalSPI.cpp ======== */
 

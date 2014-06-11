@@ -1,7 +1,7 @@
 SparkCore-LiquidCrystalSPI
 ==========================
 
-A Hardware and Software SPI version of the LiquidCrystal library for the Spark Core.
+A Hardware and Software SPI driven LiquidCrystal library for Spark Core.
 
 Universally Supports:
 * Standard Hitachi HD44780 based LCDs in 4-bit mode
@@ -15,10 +15,10 @@ Grab the RAW version of each file and place into your web IDE as follows:
 If you are building locally, place the files here:
 
 ```
-..\core-firmware\inc\LiquidCrystalSPI.h
-..\core-firmware\src\application.cpp (renamed from Spark-LCDSoftSPI.cpp)
-..\core-firmware\src\LiquidCrystalSPI.cpp
-..\core-firmware\src\build.mk (optional, if you have your own make file going, just add the LiquidCrystalSPI.cpp to it)
+..\core-firmware\inc\liquid-crystal-spi.h
+..\core-firmware\src\application.cpp (renamed from lcd-soft-spi.cpp)
+..\core-firmware\src\liquid-crystal-spi.cpp
+..\core-firmware\src\build.mk (optional, if you have your own make file going, just add the liquid-crystal-spi.cpp to it)
 ```
 
 ###Hardware SPI Wiring (default)###
