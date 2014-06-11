@@ -1,6 +1,6 @@
 {
   "name": "liquid-crystal-spi",
-  "author": "Juan Hernandez, Technobly",
+  "author": "David A. Mellis, Limor Fried, Tom Igoe, Juan Hernandez, Technobly",
   "license": "GNU GPLv3",
   "version": "0.0.1",
   "description": "A Hardware and Software SPI driven LiquidCrystal library for Spark Core."

@@ -14,7 +14,7 @@
  */
 
 /*
-  LiquidCrystal SPI Library - Software SPI Example
+  LiquidCrystal SPI Library - Backlight Control Example
  
   This is the same library that comes with Arduino for LCDs.
   There is added support for hardware and software SPI.
@@ -86,7 +86,7 @@
 
 #include "application.h"
 
-#include "LiquidCrystalSPI.h"
+#include "liquid-crystal-spi.h"
 
 /* ========= Application.cpp ============= */
 
@@ -95,20 +95,25 @@
 // Just make sure you don't redefine them as some other peripheral later in your code.
 LiquidCrystal lcd(D2, D3, D4);
 
+bool s = false;
+
 void setup() {
   // initialize the SPI ( Must call this before begin()! )
   lcd.initSPI();
   // set up the LCD's number of columns and rows: 
   lcd.begin(16, 2);
+  // turn on the backlight ( Requires initSPI() to be called first )
+  lcd.backlight();
   // Print a message to the LCD.
-  lcd.print("Hello, Sparky!");
+  lcd.print("Backlight Rave!");
 }
 
 void loop() {
-  // set the cursor to column 0, line 1
-  // (note: line 1 is the second row, since counting begins with 0):
-  lcd.setCursor(0, 1);
-  // print the number of seconds since reset:
-  lcd.print(millis()/1000);
+  // Toggle the Backlight on and off, Backlight RAVE!
+  if(s)
+    lcd.backlight();
+  else
+    lcd.noBacklight();
+  s = !s;
   delay(100);
 }

@@ -14,7 +14,7 @@
  */
 
 /*
-  LiquidCrystal SPI Library - Hardware SPI Example
+  LiquidCrystal SPI Library - Software SPI Example
  
   This is the same library that comes with Arduino for LCDs.
   There is added support for hardware and software SPI.
@@ -86,14 +86,14 @@
 
 #include "application.h"
 
-#include "LiquidCrystalSPI.h"
-  
+#include "liquid-crystal-spi.h"
+
 /* ========= Application.cpp ============= */
 
-// Create an instance of the library for HARDWARE SPI mode (define SS "latch" pin)
-// Default SS pin is A2, but can be ANY of the A0 - A2, A6, A7 or D0 - D7 pins.
-// Just make sure you don't redefine this pin as some other peripheral later in your code.
-LiquidCrystal lcd(A2);
+// Create an instance of the library for SOFTWARE SPI mode (define SS "latch" pin, SCLK pin, SDAT pin)
+// These can be ANY of the A0 - A7 or D0 - D7 pins. 
+// Just make sure you don't redefine them as some other peripheral later in your code.
+LiquidCrystal lcd(D2, D3, D4);
 
 void setup() {
   // initialize the SPI ( Must call this before begin()! )
